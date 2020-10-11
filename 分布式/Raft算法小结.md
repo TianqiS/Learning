@@ -156,3 +156,19 @@ Up-to-date的比较方法：
 
 为了避免上述现象，raft只提交当前leader的term，一旦当前term被committed了，前面的entries也会被间接提交，这是由于**Log Matching Property**
 
+#### 一些时间机制
+
+在raft算法中最重要的一个机制便是leader election了，因此raft算法做了如下时间要求：
+
+<img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gjj1p5e5qkj30li01yt8v.jpg" alt="截屏2020-10-09 下午2.03.22" style="zoom:50%;" />
+
+其中：
+
+- broadcastTime是一个一个server并发地向其他server发送RPCs，并接受到response的平均时间，它比electionTimeout要小一个数量级，这样可以保证leader稳定地发送心跳信息
+
+- MTFB是节点挂掉之后又恢复的平均间隔
+
+  通常比electionTimeout大几倍，以保证系统的正常运行
+
+
+
