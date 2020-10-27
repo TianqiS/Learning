@@ -45,3 +45,28 @@
 
   ![截屏2020-10-25 下午10.21.15](https://tva1.sinaimg.cn/large/0081Kckwgy1gk1y08b6xxj312y0f47gx.jpg)
 
+- `main`函数中的参数问题
+
+  通常我们在写主函数时都是`void main()`或`int main() {..return 0;}`,但ANSI-C(美国国家标准协会,C的第一个标准ANSI发布)在C89/C99中main()函数主要形式为:
+
+  1. `int main(void)`
+  2. `int main(int argc,char *argv[]) = int main(int argc,char **argv)`
+
+  其参数argc和argv用于运行时,把命令行参数传入主程序.其中ARG是指arguments,即参数.具体含义如下:
+
+  1. `int argc`:英文名为arguments count(参数计数)
+
+     count of cmd line args,运行程序传送给main函数的命令行参数总个数,包括可执行程序名,其中当argc=1时表示只有一个程序名称,此时存储在argv[0]中.
+
+  2. `char **argv`:英文名为arguments value/vector(参数值)
+
+     pointer to table of cmd line args,字符串数组,用来存放指向字符串参数的指针数组,每个元素指向一个参数,空格分隔参数,其长度为argc.数组下标从0开始,argv[argc]=NULL.
+
+  **argv[0] 指向程序运行时的全路径名**
+
+  **argv[1] 指向程序在DOS命令中执行程序名后的第一个字符串**
+
+  
+
+  
+
