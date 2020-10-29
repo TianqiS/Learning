@@ -95,5 +95,26 @@
 
   而使用`new`创建对象是在堆中进行创建的，必须要程序员手动的去管理该对象的内存空间
 
+- 疑问
+
+  ```c++
+  char * string_pointer;
+  string_pointer = "asdasadfdfas";
+  sizeof(string_pointer); // 会打印出8，这是因为在64位系统中指针的大小就是8个字节
   
+  char test[1024] = "test";
+  cout << sizeof(test) << endl; //这里会打印出数组的大小1024
+  ```
+
+  拓展
+
+  ```c++
+  char* string_pointer = "test";
+  printf("pointer is %s", string_pointer); //test
+  printf("pointer is %p", string_pointer); //会打印指针的地址
+  ```
+
+  
+
+- gcc和g++
 
