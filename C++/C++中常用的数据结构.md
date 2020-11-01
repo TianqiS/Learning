@@ -30,6 +30,8 @@
 
 
 
+![截屏2020-10-30 下午7.30.50](../../../Library/Application Support/typora-user-images/截屏2020-10-30 下午7.30.50.png)
+
 1. vector
 
    - 定义：向量（Vector）是一个封装了**动态大小数组**的顺序容器（Sequence Container）。跟任意其它类型容器一样，它能够存放各种类型的对象。可以简单的认为，向量是一个能够存放任意类型的动态数组。
@@ -53,9 +55,9 @@
      - `iterator begin()`:返回向量头指针，指向第一个元素
      - `iterator end()`:返回向量尾指针，指向向量最后一个元素的下一个位置
      - `int size() const`: 返回向量中元素个数
-   
+
 2. stack
-   
+
 3. set容器(**会自动排序**)
 
    和 map、multimap 容器不同，使用 set 容器存储的各个键值对，**要求键 key 和值 value 必须相等**

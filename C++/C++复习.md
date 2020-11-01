@@ -118,3 +118,37 @@
 
 - gcc和g++
 
+- 关于C++中`*ptr++`的问题
+
+  `*ptr++`相当于
+
+  ```c++
+  *ptr;
+  ptr++; //并不会增加ptr指向的值的value
+  ```
+
+  如果想增加ptr指向的值的value，采用如下形式
+
+  ```c++
+  (*ptr)++;
+  *ptr += 1;
+  ```
+
+  下列代码会输出:ab
+
+  ```c++
+  char *test = "abcdefg";
+  std::cout << *test++ << *test <<std::endl;
+  ```
+
+- C++中的`__CHAR_BIT__`
+
+  `CHAR_BIT` is the number of bits in `char`. These days, almost all architectures use 8 bits per byte but it is not the case always. Some older machines used to have 7-bit byte.
+
+- c语言中的赋值语句的返回值[原文](https://blog.csdn.net/wu_nan_nan/article/details/70162362)
+
+  赋值语句返回值是左值的引用
+
+  ![这里写图片描述](https://img-blog.csdn.net/20170413213454939?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3VfbmFuX25hbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+
+  

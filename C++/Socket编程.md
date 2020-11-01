@@ -47,7 +47,7 @@
   
   **数据报套接字通信流程**
   
-  ![image-20201028092922843](https://tva1.sinaimg.cn/large/0081Kckwgy1gk4sjuytoyj30qg0jstbj.jpg)
+  ![截屏2020-10-29 下午5.36.26](https://tva1.sinaimg.cn/large/0081Kckwgy1gk6c93l1qgj30uk0l2goq.jpg)
   
 - 在网络上，一个Socket的表示主要借助于地址和端口来描述
 

@@ -130,7 +130,7 @@ StringBuilder可以被更改
 
 > For example, if you need to concatenate a large number of strings, appending to a StringBuilder object is more efficient.
 
-- Lengeh and Capacity
+- Length and Capacity
 
   ![截屏2020-10-23 上午9.58.41](https://tva1.sinaimg.cn/large/0081Kckwgy1gjz1aw8g2ej30wq0cymzk.jpg)
 
