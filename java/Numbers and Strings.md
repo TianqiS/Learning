@@ -6,7 +6,7 @@ Java platform provides *wrapper* classes for each of the primitive data types.Th
 
 Often, the wrapping is done by the compiler—if you use a primitive where an object is expected, the compiler *boxes* the primitive in its wrapper class for you.Similarly, if you use a number object when a primitive is expected, the compiler *unboxes* the object for you.
 
-- 使用Number bject的几个原因
+- 使用Number oject的几个原因
 
   ![截屏2020-10-23 上午8.08.51](https://tva1.sinaimg.cn/large/0081Kckwgy1gjyy4m8li2j313y0diq5e.jpg)
 
