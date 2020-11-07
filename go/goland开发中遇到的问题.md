@@ -1,4 +1,4 @@
-### golang开发中遇到的问题
+### Goland开发中遇到的问题
 
 - 在GoLand Debug中遇到`plugin was built with a different version of package`
 
