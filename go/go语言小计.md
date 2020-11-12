@@ -282,3 +282,20 @@
 
 - []byte和string的区别
 
+- 声明数组时遇到的问题
+
+  如果这样写会报错
+
+  ```go
+  i := 5
+  var result [i]int //error
+  ```
+
+  应该这样写
+
+  ```go
+  i := 5
+  result := make([]int, i)
+  ```
+
+  

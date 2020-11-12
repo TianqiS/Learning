@@ -112,6 +112,7 @@
   // app/entry.go
   package main
   import "fmt"
+  import "version"
   func init() {
    fmt.Println("app/entry.go ==> init()")
   }
@@ -120,6 +121,6 @@
    fmt.Println("app/fetch-version.go ==> fetchVersion()")
    fmt.Println("version ===> ", myVersion)
   }
-  ```
-
+```
+  
   ![1*WgGVCWos_cMaSbe2giKn_w](https://miro.medium.com/max/1400/1*WgGVCWos_cMaSbe2giKn_w.png)
