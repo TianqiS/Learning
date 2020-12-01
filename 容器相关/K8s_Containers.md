@@ -20,3 +20,9 @@ Image与Container之间的联系？
 镜像与容器的先后顺序是什么？
 
 答：当然是先有镜像再有实例了，虽然创建镜像可以参考某个容器，但是标准的做法是先制作镜像然后再跑容器。
+
+#### Container runtimes
+
+The container runtime is the software that is responsible for running containers.
+
+Kubernetes supports several container runtimes: [Docker](https://docs.docker.com/engine/), [containerd](https://containerd.io/docs/), [CRI-O](https://cri-o.io/#what-is-cri-o), and any implementation of the [Kubernetes CRI (Container Runtime Interface)](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-node/container-runtime-interface.md).

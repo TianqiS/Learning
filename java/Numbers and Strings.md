@@ -52,7 +52,7 @@ You can create a Character object with the Character constructor:
 
 `Character ch = new Character('a');`
 
-- The Character class is immutable, so that once it is created, a Character object cannot be changed
+- The Character class is **immutable**, so that once it is created, a Character object cannot be changed
 
 - Useful Methods in the Character Class
 

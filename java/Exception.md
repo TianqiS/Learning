@@ -18,6 +18,8 @@
 
 - The code that might throw certain exceptions must be enclosed by either of the following:
 
+  try后面要么有catch，要么有finally
+
   ![截屏2020-10-29 下午2.15.53](https://tva1.sinaimg.cn/large/0081Kckwgy1gk66gaxx3qj315o09m767.jpg)
 
 - java系统中的三种exceptions
@@ -42,7 +44,7 @@
 
 - error和runtime exceptions被统称为不受检查的异常(unchecked exceptions)
 
-- Try with Resources(在该block里面定义的资源会自动释放)
+- Try with Resources(在该block里面定义的资源会自动释放，但要实现autocloseable接口)
 
   ![截屏2020-10-29 下午2.37.12](https://tva1.sinaimg.cn/large/0081Kckwgy1gk672hqox4j319e0jyae8.jpg)
 

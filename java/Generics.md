@@ -192,3 +192,4 @@
 
 - Type Erasure
 
+- 泛型数组不能创建![截屏2020-11-26 下午5.50.50](https://tva1.sinaimg.cn/large/0081Kckwgy1gl2q0qfzg8j30l403dt8u.jpg)

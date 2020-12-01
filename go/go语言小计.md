@@ -298,4 +298,47 @@
   result := make([]int, i)
   ```
 
+- 结构体中的匿名变量
+
+- Interface类型
+
+  一种类型只要实现接口声明的方法就算实现了接口，同样一种类型能同时支持实现多个接口了，一个接口也能被多种类型实现。如果一种类型实现了某个接口，那么这种类型的对象能够赋值给这个接口类型的变量。
+
+  最后的一部分解释一下 `interface{}` 类型，这种类型的接口没有声明任何一个方法，俗称空接口。因为任何类型的对象都默认实现了空接口（上文提到任意类型只要实现了接口的方法就算实现了对应的接口，由于空接口没有方法，故所有类型默认都实现了空接口）在需要任意类型变量的场景下非常有用。
+
+  
+
+  ```golang
+  package main
+  
+  import (
+      "fmt"
+  )
+  
+  func PrintAll(vals []interface{}) {
+      for _, val := range vals {
+          fmt.Println(val)
+      }
+  }
+  
+  func main() {
+      names := []string{"stanley", "david", "oscar"}
+      vals := make([]interface{}, len(names))
+      for i, v := range names {
+          vals[i] = v
+      }
+      PrintAll(vals)
+  }
+  
+  // stanley
+  // david
+  // oscar
+  ```
+
+  
+
+- `v.(int)`的含义
+
+  go语言中的断言
+
   
