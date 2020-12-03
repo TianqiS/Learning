@@ -341,4 +341,15 @@
 
   go语言中的断言
 
+- 没有参数的return语句
+
+  ```go
+  func test() (x, y int) {
+    ...
+    return
+  }
+  ```
+
+  上述代码会直接return x和y的值
+
   
