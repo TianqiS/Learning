@@ -352,4 +352,82 @@
 
   上述代码会直接return x和y的值
 
+- go语言指针default value is nil
+
+  deference a nil pointer will lead to panic
+
+- 数组作为参数的时候传参
+
+  ```go
+  func test(a [][]int) {
+      for _, i := range a {
+          println(i)
+      }
+  }
+  
+  func main() {
+      var b [3][2]int
+      test(b) //会报错
+  
+  ```
+
+  正确写法：
+
+  ```go
+  func test(a [3][2]int) {
+      for _, i := range a {
+          println(i)
+      }
+  }
+  
+  func main() {
+      var b [3][2]int
+      test(b)
+  }
+  ```
+
+- 创建动态数组
+
+  ```go
+  
+  func createArray2(size int) []int{
+  	return make([]int, size)
+  }
+   
+  //错误 "non-constant array bound"
+  func createArray(size int) []int{
+  	return [size]int
+  }
+   
+  func main(){
+  	createArray(5)
+  
+  ```
+
+  而在java中却不一样
+
+  ```java
+  
+  public class Test {
+      //正确
+  	private static int[] createArray(int size){
+  		return new int[size];
+  	}
+  	public static void main(String[] args) {
+  		int[] a = createArray(5);
+  		System.out.println(a[4]);
+  	}
+  }
+  ```
+
+- 创建二维数组
+
+  ```go
+   var dp [][]int
+      dp = make([][]int, m + 1)
+      for i := 0; i < m + 1; i++ {
+          dp[i] = make([]int, n + 1)
+      }
+  ```
+
   
