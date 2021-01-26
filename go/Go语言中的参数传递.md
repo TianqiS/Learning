@@ -205,3 +205,4 @@ func main() {
 > Slices in Go are just small descriptors, something like a struct with a pointer to a backing array and 2 `int`s, a length and capacity. No matter how big the backing array is, passing slices are always efficient and you shouldn't even consider passing a pointer to them, unless you want to modify the slice header of course.
 >
 > Parameters in Go are always passed by value, and a copy of the value being passed is made. If you pass a pointer, then the pointer value will be copied and passed. When a slice is passed, the slice value (which is a small descriptor) will be copied and passed - which will point to the same backing array (which will not be copied).
+

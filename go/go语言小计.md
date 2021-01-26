@@ -559,7 +559,7 @@ type void struct{}
 var member void
 
 set := make(map[string]void) // New empty set
-set["Foo"] = member          // Add
+set["Foo"] = struct{}{}         // Add
 for k := range set {         // Loop
     fmt.Println(k)
 }
@@ -567,6 +567,78 @@ delete(set, "Foo")      // Delete
 size := len(set)        // Size
 _, exists := set["Foo"] // Membership
 ```
+
+#### 求幂操作
+
+```go
+/*
+*    递归法 求x^n
+ */
+func powerf2(x float64, n int) float64 {
+    if n == 0 {
+        return 1
+    } else {
+        return x * powerf2(x, n-1)
+    }
+}
+
+/*
+*    循环法 求x^n
+ */
+
+func powerf3(x float64, n int) float64 {
+    ans := 1.0
+
+    for n != 0 {
+        ans *= x
+        n--
+    }
+    return ans
+}
+```
+
+#### 获取int型长度
+
+转字符串，再获取
+
+```go
+len(strcov.Itoa(a))
+```
+
+#### 获取int型变量某一位的值
+
+```go
+func getPo(num, pos int) int {
+   numStr := strconv.Itoa(num)
+
+   return int(numStr[pos] - 48)
+}
+```
+
+#### 使用make创建切片
+
+```go
+test := make([]int , 5) //这一行代码会创建一个初始长度为5的切片
+test := make([], 5, 6) //这一行代码会创建一个初始长度为5但是capacity为6的切片
+```
+
+#### 关于for range变量赋值问题
+
+```go
+test := []int{2, 3}
+
+for _, j := range test {
+  j = 2
+}
+//经过上述代码之后原来的slice中的值依旧是{2, 3}，这是因为for range的时候是值传递，因此直接修改j没用
+//正确的修改方式
+
+for i := range test {
+  test[i] = 2
+}
+```
+
+
 
 
 
