@@ -638,7 +638,138 @@ for i := range test {
 }
 ```
 
+#### go语言append
 
+例如`var set []int`
 
+直接`result := append(set)`和`result := append([]int{}, set...)`的区别在哪里
 
+#### 字符串的reverse
+
+字符串reverse无法直接操作字符串，需要转成byte数组，之后再转成string
+
+#### go语言中:=符号
+
+```go
+func mySqrt(x int) int {
+   start := 0
+   end := x
+   var mid int
+   for start <= end {
+     mid := start + (end - start) / 2 //注意这里:=
+      if mid * mid > x {
+         end = mid - 1
+         continue
+      } else if mid * mid < x {
+         start = mid + 1
+      } else {
+         return mid
+      }
+   }
+  return mid  //最终会输出0，因为在for的{}里用:=声明的mid，可能因为go语言的闭包
+}
+```
+
+#### implement接口
+
+下面两种方式implement接口是不一样的
+
+```go
+type a interface {
+  test()
+}
+
+type b struct {
+  
+}
+
+func(*b) test() { //这里是b类型的指针实现了a接口
+  
+}
+
+type c struct {
+  
+}
+
+func(c) test() { //这里是c类型实现了接口
+  
+}
+```
+
+#### go语言中的nil值
+
+```go
+type Person struct {
+  AgeYears int
+  Name string
+  Friends []Person
+}
+
+var p Person // Person{0, "", nil} 
+```
+
+变量`p`只声明但没有赋值，所以p的所有字段都有对应的零值。那么，这个`nil`到底是什么呢？Go的文档中说到，*nil是预定义的标识符，代表**指针、通道、函数、接口、映射**或**切片**的零值*，也就是预定义好的一个变量：
+
+`nil`并不是Go的关键字之一，你甚至可以自己去改变`nil`的值：
+
+```go
+var nil = errors.New("hi")
+```
+
+#### interface和struct的组合
+
+```go
+type a interface {
+   b()
+}
+
+type test struct {
+   num int
+}
+
+func (*test) b() {
+
+}
+
+func ex(a) {
+
+}
+
+type test2 struct {
+   *test
+   // test 有指针和没指针都可以
+}
+
+func main() {
+   t2 := test2{}
+   // t2 := &test2{}
+   ex(t2)
+}
+```
+
+https://www.cnblogs.com/pluse/p/7655977.html
+
+#### 获取结构体指针
+
+1. 获取已经创建好的结构体的指针
+
+   可以用`&p`来获取结构体指针
+
+2. 获取未创建好的结构体的指针
+
+   通过`p := &name{}`或者`p := new(name)`
+
+####  结构体tag属性
+
+在struct中，field除了名称和数据类型，还可以有一个tag属性。tag属性用于"注释"各个字段，除了reflect包，正常的程序中都无法使用这个tag属性。
+
+```go
+type TagType struct { // tags
+    field1 bool   "An important answer"
+    field2 string "The name of the thing"
+    field3 int    "How much there are"
+}
+```
+
+https://www.cnblogs.com/f-ck-need-u/p/9882315.html
 
