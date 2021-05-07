@@ -17,4 +17,14 @@
   > all= 作用于所有包
   >
   > 再次使用GoLand Debug，问题解决
+  
+- goland实现接口
+
+  `control + i`
+  
+- 代码格式规整
+
+  ![image-20210429165155312](https://tva1.sinaimg.cn/large/008i3skNgy1gq0pqqyimvj30p2055dga.jpg)
+
+- git提交在变基提交的时候要切换到想要保留的分支上进行变基，遇到冲突之后解决完冲突记得`git rebase --continue`
 
